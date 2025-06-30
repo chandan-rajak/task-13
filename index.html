@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task13</title>
+  <title>JavaScript Programs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <h1>Open inspect and Select console to see output</h1>
-    <script src="app.js"></script>
+
+  <h1>Combined JavaScript Programs</h1>
+
+  <!-- 1. Print Name and Address -->
+  <section>
+    <h2>1. Name and Address</h2>
+    <p id="nameAddress"></p>
+  </section>
+
+  <!-- 2. Check if value and data-type are same -->
+  <section>
+    <h2>2. Value and Type Check</h2>
+    <p id="typeCheck"></p>
+  </section>
+
+  <!-- 3. Add two strings and convert to uppercase -->
+  <section>
+    <h2>3. Concatenated Uppercase String</h2>
+    <p id="upperString"></p>
+  </section>
+
+  <!-- 4. Convert string length to bytes -->
+  <section>
+    <h2>4. String Byte Length</h2>
+    <p id="byteLength"></p>
+  </section>
+
+  <!-- 5. Round number to specified digits -->
+  <section>
+    <h2>5. Rounded Number</h2>
+    <p id="roundedNumber"></p>
+  </section>
+
+  <script>
+    // 1. Name and Address
+    const name = "John Doe";
+    const address = "123 Main St, Springfield";
+    document.getElementById("nameAddress").innerText = `Name: ${name}\nAddress: ${address}`;
+
+    // 2. Value and Type Check
+    const a = 100;
+    const b = "100";
+    const checkResult = (a === b) ? "Same value and type" : "Different value or type";
+    document.getElementById("typeCheck").innerText = checkResult;
+
+    // 3. Concatenate and Uppercase
+    const str1 = "hello";
+    const str2 = "world";
+    const combinedString = (str1 + str2).toUpperCase();
+    document.getElementById("upperString").innerText = combinedString;
+
+    // 4. String Byte Length
+    const inputStr = "Hello world";
+    const byteLength = new TextEncoder().encode(inputStr).length;
+    document.getElementById("byteLength").innerText = `Byte length: ${byteLength}`;
+
+    // 5. Rounding Numbers
+    function roundNumber(num, digits) {
+      return Number(num.toFixed(digits));
+    }
+    const numberToRound = 3.14159265359;
+    const rounded = roundNumber(numberToRound, 3);
+    document.getElementById("roundedNumber").innerText = `Rounded: ${rounded}`;
+  </script>
+
 </body>
 </html>
